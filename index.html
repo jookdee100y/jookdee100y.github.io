@@ -6,17 +6,15 @@
     <title>จุกดี ก๋วยเตี๋ยวปากหม้อ - ตลาดบ้านใหม่ 100 ปี</title>
     <meta name="description" content="ก๋วยเตี๋ยวปากหม้อสูตรโบราณ ตลาดบ้านใหม่ 100 ปี ฉะเชิงเทรา">
     
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="/jookdee100y/css/premium.css?v=1770888631">
 
     <style>
         :root {
             --primary-red: #B22222;
             --gold-main: #D4AF37;
             --gold-light: #FFD700;
-            --blue-main: #006994;
             --glass-bg: rgba(255, 255, 255, 0.96);
             --text-dark: #2c2c2c;
         }
@@ -28,264 +26,196 @@
             font-family: 'Kanit', sans-serif;
             color: var(--text-dark);
             margin: 0;
-            padding-bottom: 0;
-        }
-
-        /* --- Layout --- */
-        .main-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
             overflow-x: hidden;
         }
 
         /* --- Navigation --- */
-        .navbar-premium {
+        .navbar {
             position: fixed; top: 0; left: 0; width: 100%; 
-            padding: 15px 20px; display: flex; justify-content: space-between; 
-            align-items: center; z-index: 1000; background: white;
+            padding: 15px 20px; background: white; z-index: 1000;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            box-sizing: border-box;
+            display: flex; align-items: center; box-sizing: border-box;
         }
+        .nav-brand { font-weight: 700; color: var(--primary-red); font-size: 1.2rem; }
 
         /* --- Hero Section --- */
         .hero {
-            width: 100%;
-            height: 45vh;
-            min-height: 350px;
+            width: 100%; height: 45vh; min-height: 350px;
             background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.85)), 
                         url('https://www.jookdee100y.x10.bz/image/301565549_500683542065551_1327802872783650144_n.jpg');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            border-bottom: 5px solid var(--gold-main);
-            padding: 0 20px;
-            box-sizing: border-box;
-            margin-top: 60px; /* Offset for fixed navbar */
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; border-bottom: 5px solid var(--gold-main);
+            margin-top: 50px; padding: 0 20px; box-sizing: border-box;
         }
+        .hero-title { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; margin: 0; color: var(--gold-light); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero-subtitle { font-size: clamp(1.2rem, 4vw, 1.8rem); color: var(--gold-main); margin-top: 5px; }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin: 0;
-            color: var(--gold-light);
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-            line-height: 1.2;
-        }
-
-        .hero-subtitle {
-            font-size: 1.8rem;
-            color: var(--gold-main);
-            margin-top: 5px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-        }
-
-        /* --- Quick Links --- */
+        /* --- Quick Links Section --- */
         .quick-links-section {
-            width: 100%;
-            max-width: 900px;
-            margin: -40px auto 20px auto;
-            position: relative;
-            z-index: 10;
-            padding: 0 15px;
-            box-sizing: border-box;
+            width: 100%; max-width: 900px; margin: -40px auto 30px auto;
+            position: relative; z-index: 10; padding: 0 15px; box-sizing: border-box;
         }
-
         .ql-label {
-            background: var(--primary-red);
-            color: white;
-            padding: 5px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background: var(--primary-red); color: white; padding: 6px 20px;
+            border-radius: 50px; font-weight: bold; display: inline-block;
+            margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
-
         .ql-outer-box {
-            width: 100%;
-            background: #f8f9fa;
-            border-radius: 25px;
-            padding: 20px;
-            box-sizing: border-box;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            background: #f8f9fa; border-radius: 25px; padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-
         .quick-link-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 15px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px;
         }
-
+        .q-group-title {
+            grid-column: 1 / -1; font-size: 1.2rem; font-weight: bold; color: var(--primary-red);
+            margin: 20px 0 10px 0; border-left: 5px solid var(--gold-main); padding-left: 15px;
+        }
         .q-link {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            padding: 25px 10px; background: #ffffff; border-radius: 20px;
-            text-decoration: none; color: #444; font-weight: 700; transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;
+            padding: 20px 10px; background: white; border-radius: 18px;
+            text-decoration: none; color: #444; font-weight: 700; transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; font-size: 0.95rem;
         }
+        .q-link:hover { transform: translateY(-5px); color: var(--primary-red); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
+        .q-link i { font-size: 2.5rem; margin-bottom: 10px; color: var(--primary-red); }
 
-        .q-link:hover { transform: translateY(-8px); color: var(--primary-red); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
-
-        .q-link i {
-            font-size: 2.8rem; margin-bottom: 15px;
-            background: linear-gradient(45deg, var(--primary-red), #FF4500);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-
-        .q-group-title {
-            grid-column: 1 / -1; font-size: 1.3rem; font-weight: bold; color: var(--primary-red);
-            margin: 25px 0 10px 0; border-left: 5px solid var(--gold-main); padding-left: 15px;
-        }
-
-        /* --- Cards & Gallery --- */
-        .container-content { width: 100%; max-width: 600px; padding: 0 15px; box-sizing: border-box; }
+        /* --- Content & Gallery --- */
+        .container-content { width: 100%; max-width: 600px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; }
         .glass-card {
             background: var(--glass-bg); border-radius: 20px; padding: 25px 20px; margin-bottom: 30px;
-            text-align: center; border: 3px solid white; outline: 3px solid var(--gold-main);
-            outline-offset: -8px; box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            text-align: center; border: 2px solid white; outline: 3px solid var(--gold-main);
+            outline-offset: -8px; box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-
         .section-header {
-            display: inline-flex; align-items: center; gap: 10px; background: white; padding: 8px 25px;
+            display: inline-flex; align-items: center; gap: 10px; background: white; padding: 8px 20px;
             border-radius: 50px; box-shadow: 0 3px 6px rgba(0,0,0,0.1); font-weight: 800;
-            color: var(--primary-red); margin-bottom: 15px;
+            color: var(--primary-red); margin-bottom: 20px;
         }
-
-        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 15px 0; }
-        .gallery-item { aspect-ratio: 1/1; overflow: hidden; border-radius: 10px; border: 2px solid var(--gold-main); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 20px; }
+        .gallery-item { aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; border: 2px solid var(--gold-main); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-
-        .btn-3d {
-            display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; padding: 14px;
-            border-radius: 12px; font-size: 1.1rem; font-weight: 700; text-decoration: none !important;
-            background: linear-gradient(to bottom, #ff4d4d, #b30000); color: white; box-shadow: 0 5px 0 #800000;
+        
+        .btn-main {
+            display: block; width: 100%; padding: 15px; border-radius: 12px;
+            background: linear-gradient(to bottom, #ff4d4d, #b30000); color: white;
+            text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 5px 0 #800000;
         }
 
-        /* --- Footer & Audio --- */
+        /* --- Footer --- */
         .footer-premium {
             background: linear-gradient(to bottom, #2b0a0a, #000000); color: white;
-            padding: 40px 0; text-align: center; width: 100%;
+            padding: 40px 20px; text-align: center; margin-top: 50px;
         }
-        .footer-line { width: 60%; max-width: 300px; height: 1px; background: rgba(255,255,255,0.2); border: 0; margin: 20px auto; }
+        .footer-line { width: 50%; max-width: 200px; height: 1px; background: rgba(255,255,255,0.2); border: 0; margin: 20px auto; }
 
+        /* --- Audio Button --- */
         .btn-audio-float {
             position: fixed; bottom: 20px; right: 20px; width: 55px; height: 55px;
             border-radius: 50%; border: none; background: var(--gold-main); color: #333;
             cursor: pointer; z-index: 9999; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            display: flex; align-items: center; justify-content: center; font-size: 1.4rem;
+            display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
         }
         .btn-audio-float.speaking { background: #ff4444; color: white; animation: pulse 1.5s infinite; }
 
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-        /* --- Responsive --- */
         @media (max-width: 600px) {
-            .hero { height: 35vh; min-height: 250px; }
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1.3rem; }
             .quick-link-container { grid-template-columns: repeat(2, 1fr); }
-            .q-link { padding: 15px 5px; font-size: 1rem; }
-            .q-link i { font-size: 2.2rem; }
+            .hero { height: 35vh; }
         }
     </style>
 </head>
-
 <body>
 
-    <nav class="navbar navbar-premium">
-        <div class="nav-brand nav-brand-premium"><i class="fas fa-utensils"></i> จุกดี (ก๋วยเตี๋ยวปากหม้อ)</div>
+    <nav class="navbar">
+        <div class="nav-brand"><i class="fas fa-utensils"></i> จุกดี (ก๋วยเตี๋ยวปากหม้อ)</div>
     </nav>
 
-    <div class="main-wrapper">
-        <header class="hero">
-            <h1 class="hero-title" data-aos="zoom-in">จุกดี</h1>
-            <h2 class="hero-subtitle" data-aos="fade-up">ก๋วยเตี๋ยวปากหม้อ</h2>
-        </header>
+    <header class="hero">
+        <h1 class="hero-title" data-aos="zoom-in">จุกดี</h1>
+        <p class="hero-subtitle" data-aos="fade-up">ก๋วยเตี๋ยวปากหม้อสูตรโบราณ ตลาดบ้านใหม่ 100 ปี</p>
+    </header>
 
-        <main class="quick-links-section">
-            <div class="ql-label"><i class="fas fa-star"></i> ลิงก์ด่วน</div>
-            
-            <div class="ql-outer-box">
-                <div class="quick-link-container">
-                    <div class="q-group-title">🍱 สำหรับลูกค้าจุกดี</div>
-                    <a href="https://www.jookdee100y.x10.bz/made_to_order_food/status.php" target="_blank" rel="noopener" class="q-link">
-                        <i class="fas fa-desktop"></i> จอคิวลูกค้า
-                    </a>
-                    <a href="https://www.jookdee100y.x10.bz/radio/" target="_blank" rel="noopener" class="q-link">
-                        <i class="fas fa-broadcast-tower"></i> วิทยุ
-                    </a>
-                    <a href="https://www.jookdee100y.x10.bz/game/" target="_blank" rel="noopener" class="q-link">
-                        <i class="fas fa-gamepad"></i> เกมส์สนุกๆ
-                    </a>
+    <section class="quick-links-section">
+        <div class="ql-label"><i class="fas fa-star"></i> ลิงก์ด่วน / ระบบร้าน</div>
+        <div class="ql-outer-box">
+            <div class="quick-link-container">
+                <div class="q-group-title">🍱 สำหรับลูกค้า</div>
+                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/status.php" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-desktop"></i> จอคิวลูกค้า
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/radio/" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-broadcast-tower"></i> วิทยุ
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/game/" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-gamepad"></i> เกมส์สนุกๆ
+                </a>
 
-                    <div class="q-group-title">⚙️ ระบบร้าน</div>
-                    <a href="https://www.jookdee100y.x10.bz/made_to_order_food/" target="_blank" rel="noopener" class="q-link">
-                        <i class="fas fa-clipboard-list"></i> รับออเดอร์
-                    </a>
-                    <a href="https://www.jookdee100y.x10.bz/made_to_order_food/kitchen.php" target="_blank" rel="noopener" class="q-link">
-                        <i class="fas fa-fire"></i> หน้าครัว
-                    </a>
+                <div class="q-group-title">⚙️ ระบบงาน</div>
+                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-clipboard-list"></i> รับออเดอร์
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/kitchen.php" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-fire"></i> หน้าครัว
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/note/" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-sticky-note"></i> โน้ต/ระบบ
+                </a>
 
-                    <div class="q-group-title">🚤 บริการอื่นๆ</div>
-                    <a href="https://www.youtube.com/@sakchaibangpakong" target="_blank" rel="noopener" class="q-link">
-                        <i class="fab fa-youtube"></i> ศักดิ์ชัย Youtube
-                    </a>
-                    <a href="https://www.facebook.com/sakchaiccas/" target="_blank" rel="noopener" class="q-link">
-                        <i class="fab fa-facebook"></i> ศักดิ์ชัย FB
-                    </a>
-                </div>
+                <div class="q-group-title">🚤 บริการอื่นๆ</div>
+                <a href="https://www.facebook.com/sakchaiccas/" target="_blank" rel="noopener" class="q-link">
+                    <i class="fab fa-facebook"></i> ศักดิ์ชัย FB
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/lottery/index.php" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-ticket-alt"></i> ตรวจหวย
+                </a>
             </div>
-        </main>
+        </div>
+    </section>
 
-        <div class="container-content">
-            <section class="glass-card" data-aos="fade-up">
-                <div class="section-header"><i class="fas fa-camera"></i> บรรยากาศร้าน</div>
-                <div class="gallery-grid">
-                    <div class="gallery-item"><img src="images/75246_0.jpg" alt="Shop 1"></div>
-                    <div class="gallery-item"><img src="images/75247_0.jpg" alt="Shop 2"></div>
-                    <div class="gallery-item"><img src="images/75248_0.jpg" alt="Shop 3"></div>
-                    <div class="gallery-item"><img src="images/75249_0.jpg" alt="Shop 4"></div>
-                </div>
-                <a href="menu/boat_noodles/index.php" class="btn-3d">เข้าสู่หน้าหลักร้านจุกดี</a>
-            </section>
+    <div class="container-content">
+        <section class="glass-card" data-aos="fade-up">
+            <div class="section-header"><i class="fas fa-camera"></i> บรรยากาศร้าน</div>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/75246_0.jpg" alt="Atmosphere 1"></div>
+                <div class="gallery-item"><img src="images/75247_0.jpg" alt="Atmosphere 2"></div>
+                <div class="gallery-item"><img src="images/75248_0.jpg" alt="Atmosphere 3"></div>
+                <div class="gallery-item"><img src="images/75249_0.jpg" alt="Atmosphere 4"></div>
+            </div>
+            <a href="menu/boat_noodles/index.php" class="btn-main">เข้าสู่หน้าหลักร้านจุกดี</a>
+        </section>
 
-            <footer style="text-align: center; padding-bottom: 30px;">
-                <p style="font-weight: 900; color: #333;">พัฒนาโดย <span style="color: var(--primary-red);">พนักงานหน้าร้าน จุกดี</span></p>
-            </footer>
+        <div style="text-align: center; margin-bottom: 40px;">
+            <p style="font-size: 0.9rem; font-weight: bold; color: #666;">
+                พัฒนาโดย <span style="color: var(--primary-red);">พนักงานหน้าร้าน จุกดี</span>
+            </p>
         </div>
     </div>
 
     <footer class="footer-premium">
-        <div class="container" data-aos="fade-up">
-            <h3><i class="fas fa-utensils"></i> จุกดี ก๋วยเตี๋ยวปากหม้อ</h3>
-            <p>สูตรโบราณ ตลาดบ้านใหม่ 100 ปี ฉะเชิงเทรา</p>
+        <div data-aos="fade-up">
+            <h3>จุกดี ก๋วยเตี๋ยวปากหม้อ</h3>
+            <p>เปิดบริการที่ ตลาดบ้านใหม่ 100 ปี ฉะเชิงเทรา</p>
             <hr class="footer-line">
-            <div style="font-size: 0.9rem; color: var(--gold-main);">
-                <i class="fas fa-eye"></i> ผู้เข้าชม: 15,400 คน
+            <div style="color: var(--gold-main); font-size: 0.9rem;">
+                <i class="fas fa-eye"></i> ผู้เข้าชมสะสม: 15,400 ครั้ง
             </div>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">© 2025 Jookdee Boat Noodle</p>
         </div>
     </footer>
 
-    <button class="btn-audio-float" id="btnAudio" onclick="toggleSpeech()">
+    <button class="btn-audio-float" id="btnAudio" onclick="toggleSpeech()" title="ฟังเสียงต้อนรับ">
         <i class="fas fa-volume-up" id="iconAudio"></i>
     </button>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Init AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({ once: true, duration: 800 });
-            }
-        });
+        // Initialize Animations
+        AOS.init({ once: true, duration: 800 });
 
-        // Speech Function
+        // Speech Synthesis Function
         let isSpeaking = false;
         function toggleSpeech() {
             const synth = window.speechSynthesis;
@@ -294,21 +224,21 @@
 
             if (isSpeaking) {
                 synth.cancel();
-                stopEffect();
+                isSpeaking = false;
+                btn.classList.remove('speaking');
+                icon.className = 'fas fa-volume-up';
             } else {
                 const utter = new SpeechSynthesisUtterance("ยินดีต้อนรับสู่ จุกดี ก๋วยเตี๋ยวปากหม้อ สูตรโบราณ ตลาดบ้านใหม่ 100 ปี");
                 utter.lang = 'th-TH';
-                utter.onend = stopEffect;
+                utter.onend = () => {
+                    isSpeaking = false;
+                    btn.classList.remove('speaking');
+                    icon.className = 'fas fa-volume-up';
+                };
                 synth.speak(utter);
                 isSpeaking = true;
                 btn.classList.add('speaking');
                 icon.className = 'fas fa-stop';
-            }
-
-            function stopEffect() {
-                isSpeaking = false;
-                btn.classList.remove('speaking');
-                icon.className = 'fas fa-volume-up';
             }
         }
     </script>

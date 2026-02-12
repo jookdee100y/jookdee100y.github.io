@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-red: #B22222;
+            --gold-main: #D4AF37;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            margin: 0;
+            padding: 10px;
+            background: transparent; /* ให้โปร่งใสเผื่อไปครอบในหน้าอื่น */
+        }
+
+        /* ตัวครอบใหญ่เพื่อให้ทุกอย่างสมดุล */
+        .ql-outer-box {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 25px;
+            box-sizing: border-box;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .quick-link-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            justify-content: center;
+        }
+
+        /* หัวข้อกลุ่ม */
+        .q-group-title {
+            grid-column: 1 / -1;
+            text-align: left;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-red);
+            margin: 25px 0 10px 5px;
+            padding-left: 15px;
+            border-left: 5px solid var(--gold-main);
+            display: flex;
+            align-items: center;
+        }
+
+        .q-group-title:first-child { margin-top: 0; }
+
+        /* สไตล์ปุ่ม */
+        .q-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 10px;
+            background: #ffffff;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #444;
+            font-weight: 700;
+            font-size: 1rem;
+            line-height: 1.4;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .q-link:hover {
+            transform: translateY(-8px);
+            color: var(--primary-red);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        /* ตกแต่งไอคอน */
+        .q-link i {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            background: linear-gradient(45deg, var(--primary-red), #FF4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: 0.3s;
+        }
+
+        .q-link:hover i {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #FF4500, var(--gold-main));
+            -webkit-background-clip: text;
+        }
+
+        /* สำหรับมือถือ */
+        @media (max-width: 600px) {
+            .quick-link-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .q-link {
+                padding: 15px 5px;
+                font-size: 0.95rem;
+            }
+            .q-link i {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="ql-outer-box">
+    <div class="quick-link-container">
+        
+        <div class="q-group-title">🍱 สำหรับลูกค้าจุกดี</div>
+        <a href="https://www.jookdee100y.x10.bz/made_to_order_food/status.php" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-desktop"></i>
+            จอคิวลูกค้า
+        </a>
+        <a href="https://www.jookdee100y.x10.bz/radio/" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-broadcast-tower"></i>
+            วิทยุออนไลน์
+        </a>
+        <a href="https://www.jookdee100y.x10.bz/general/clock.php" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-clock"></i>
+            นาฬิกา
+        </a>
+        <a href="https://www.jookdee100y.x10.bz/game/" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-gamepad"></i>
+            เกมส์สนุกๆ
+        </a>
+
+        <div class="q-group-title">🛠️ ระบบร้านจุกดี</div>
+        <a href="https://www.jookdee100y.x10.bz/made_to_order_food/" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-clipboard-list"></i>
+            รับออเดอร์
+        </a>
+        <a href="https://www.jookdee100y.x10.bz/made_to_order_food/kitchen.php" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-fire"></i>
+            หน้าครัว
+        </a>
+        <a href="https://www.jookdee100y.x10.bz/note/" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-sticky-note"></i>
+            สมุดโน้ต
+        </a>
+        <a href="https://www.jookdee100y.x10.bz/made_to_order_food/admin_ip.php" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-tools"></i>
+            ระบบหลังบ้าน
+        </a>
+
+        <div class="q-group-title">🚤 ศักดิ์ชัยนำโชค</div>
+        <a href="https://www.youtube.com/@sakchaibangpakong" target="_blank" rel="noopener" class="q-link">
+            <i class="fab fa-youtube"></i>
+            YouTube
+        </a>
+        <a href="https://www.facebook.com/sakchaiccas/" target="_blank" rel="noopener" class="q-link">
+            <i class="fab fa-facebook"></i>
+            Facebook
+        </a>
+        <a href="https://sakchaiboat.42web.io/" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-ship"></i>
+            เว็บไซต์เรือ
+        </a>
+
+        <div class="q-group-title">🎰 เสี่ยงโชค</div>
+        <a href="https://www.jookdee100y.x10.bz/lottery/index.php" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-ticket-alt"></i>
+            ตรวจหวย
+        </a>
+        <a href="https://www.sanook.com/news/laolotto/" target="_blank" rel="noopener" class="q-link">
+            <i class="fas fa-dice"></i>
+            หวยลาว
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -36,7 +36,12 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             display: flex; align-items: center; box-sizing: border-box;
         }
-        .nav-brand { font-weight: 700; color: var(--primary-red); font-size: 1.2rem; }
+        /* เพิ่มสไตล์ให้ลิงก์หัวเว็บ */
+        .nav-brand { 
+            font-weight: 700; color: var(--primary-red); font-size: 1.2rem; 
+            text-decoration: none; display: flex; align-items: center; gap: 8px;
+        }
+        .nav-brand:hover { color: #800000; }
 
         /* --- Hero Section --- */
         .hero {
@@ -97,11 +102,14 @@
         .gallery-item { aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; border: 2px solid var(--gold-main); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
         
+        /* ปุ่มเข้าเว็บหลัก */
         .btn-main {
             display: block; width: 100%; padding: 15px; border-radius: 12px;
             background: linear-gradient(to bottom, #ff4d4d, #b30000); color: white;
             text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 5px 0 #800000;
+            transition: transform 0.2s;
         }
+        .btn-main:active { transform: translateY(3px); box-shadow: 0 2px 0 #800000; }
 
         /* --- Footer --- */
         .footer-premium {
@@ -130,7 +138,9 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-brand"><i class="fas fa-utensils"></i> จุกดี (ก๋วยเตี๋ยวปากหม้อ)</div>
+        <a href="https://www.jookdee100y.x10.bz/" class="nav-brand">
+            <i class="fas fa-utensils"></i> จุกดี (ก๋วยเตี๋ยวปากหม้อ)
+        </a>
     </nav>
 
     <header class="hero">
@@ -184,7 +194,9 @@
                 <div class="gallery-item"><img src="images/75248_0.jpg" alt="Atmosphere 3"></div>
                 <div class="gallery-item"><img src="images/75249_0.jpg" alt="Atmosphere 4"></div>
             </div>
-            <a href="menu/boat_noodles/index.php" class="btn-main">เข้าสู่หน้าหลักร้านจุกดี</a>
+            <a href="https://www.jookdee100y.x10.bz/" class="btn-main">
+                <i class="fas fa-home"></i> เข้าสู่หน้าหลักร้านจุกดี
+            </a>
         </section>
 
         <div style="text-align: center; margin-bottom: 40px;">

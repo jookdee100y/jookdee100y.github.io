@@ -36,7 +36,6 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             display: flex; align-items: center; box-sizing: border-box;
         }
-        /* เพิ่มสไตล์ให้ลิงก์หัวเว็บ */
         .nav-brand { 
             font-weight: 700; color: var(--primary-red); font-size: 1.2rem; 
             text-decoration: none; display: flex; align-items: center; gap: 8px;
@@ -45,7 +44,7 @@
 
         /* --- Hero Section --- */
         .hero {
-            width: 100%; height: 45vh; min-height: 350px;
+            width: 100%; height: 50vh; min-height: 400px;
             background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.85)), 
                         url('https://www.jookdee100y.x10.bz/image/301565549_500683542065551_1327802872783650144_n.jpg');
             background-size: cover; background-position: center;
@@ -54,7 +53,27 @@
             margin-top: 50px; padding: 0 20px; box-sizing: border-box;
         }
         .hero-title { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; margin: 0; color: var(--gold-light); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        .hero-subtitle { font-size: clamp(1.2rem, 4vw, 1.8rem); color: var(--gold-main); margin-top: 5px; }
+        .hero-subtitle { font-size: clamp(1.2rem, 4vw, 1.8rem); color: var(--gold-main); margin-top: 5px; margin-bottom: 15px; }
+        
+        /* สไตล์สำหรับกล่องเวลา (ปรับให้รองรับ JS) */
+        .thai-time-badge {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--gold-main);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .thai-time-badge i { color: var(--gold-light); animation: pulse-clock 2s infinite; }
+        
+        @keyframes pulse-clock { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }
 
         /* --- Quick Links Section --- */
         .quick-links-section {
@@ -102,7 +121,6 @@
         .gallery-item { aspect-ratio: 1/1; overflow: hidden; border-radius: 12px; border: 2px solid var(--gold-main); }
         .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* ปุ่มเข้าเว็บหลัก */
         .btn-main {
             display: block; width: 100%; padding: 15px; border-radius: 12px;
             background: linear-gradient(to bottom, #ff4d4d, #b30000); color: white;
@@ -131,7 +149,7 @@
 
         @media (max-width: 600px) {
             .quick-link-container { grid-template-columns: repeat(2, 1fr); }
-            .hero { height: 35vh; }
+            .hero { height: 40vh; }
         }
     </style>
 </head>
@@ -146,6 +164,11 @@
     <header class="hero">
         <h1 class="hero-title" data-aos="zoom-in">จุกดี</h1>
         <p class="hero-subtitle" data-aos="fade-up">ก๋วยเตี๋ยวปากหม้อสูตรโบราณ ตลาดบ้านใหม่ 100 ปี</p>
+        
+        <div class="thai-time-badge" data-aos="fade-up" data-aos-delay="200">
+            <i class="far fa-clock"></i> 
+            <span id="thaiTime">กำลังโหลดเวลา...</span>
+        </div>
     </header>
 
     <section class="quick-links-section">
@@ -226,6 +249,31 @@
     <script>
         // Initialize Animations
         AOS.init({ once: true, duration: 800 });
+
+        // --- ส่วนที่แก้ไข: Script แสดงเวลาแบบไทย (JavaScript) ---
+        function updateThaiTime() {
+            const now = new Date();
+            const thMonths = [
+                "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
+                "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+            ];
+
+            const day = now.getDate();
+            const month = thMonths[now.getMonth()];
+            const year = now.getFullYear() + 543; // แปลง ค.ศ. เป็น พ.ศ.
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            // const seconds = now.getSeconds().toString().padStart(2, '0'); // ถ้าอยากได้วินาทีให้เปิดบรรทัดนี้
+
+            // ส่งค่าไปที่ HTML ID "thaiTime"
+            const timeString = `วัน${day} ${month} ${year} | เวลา ${hours}:${minutes} น.`;
+            document.getElementById('thaiTime').innerText = timeString;
+        }
+
+        // เรียกทำงานทันที และอัพเดททุก 1 วินาที (1000 ms)
+        updateThaiTime();
+        setInterval(updateThaiTime, 1000);
+        // ---------------------------------------------------
 
         // Speech Synthesis Function
         let isSpeaking = false;

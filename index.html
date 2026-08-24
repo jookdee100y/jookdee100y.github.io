@@ -6,6 +6,7 @@
     <title>จุกดี ก๋วยเตี๋ยวปากหม้อ - ตลาดบ้านใหม่ 100 ปี</title>
     <meta name="description" content="ก๋วยเตี๋ยวปากหม้อสูตรโบราณ ตลาดบ้านใหม่ 100 ปี ฉะเชิงเทรา">
     
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -45,7 +46,6 @@
         /* --- Hero Section --- */
         .hero {
             width: 100%; height: 50vh; min-height: 400px;
-            /* พื้นหลังรูปภาพ */
             background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.85)), 
                         url('https://www.jookdee100y.x10.bz/image/301565549_500683542065551_1327802872783650144_n.jpg');
             background-size: cover; background-position: center;
@@ -56,9 +56,9 @@
         .hero-title { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900; margin: 0; color: var(--gold-light); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
         .hero-subtitle { font-size: clamp(1.2rem, 4vw, 1.8rem); color: var(--gold-main); margin-top: 5px; margin-bottom: 15px; }
         
-        /* --- ส่วนแสดงเวลา (ออกแบบใหม่) --- */
+        /* --- ส่วนแสดงเวลา --- */
         .thai-time-badge {
-            background: rgba(0, 0, 0, 0.6); /* พื้นหลังดำจางๆ */
+            background: rgba(0, 0, 0, 0.6);
             border: 1px solid var(--gold-main);
             color: white;
             padding: 8px 20px;
@@ -78,7 +78,7 @@
 
         /* --- Quick Links Section --- */
         .quick-links-section {
-            width: 100%; max-width: 900px; margin: -40px auto 30px auto;
+            width: 100%; max-width: 950px; margin: -40px auto 30px auto;
             position: relative; z-index: 10; padding: 0 15px; box-sizing: border-box;
         }
         .ql-label {
@@ -87,24 +87,31 @@
             margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         .ql-outer-box {
-            background: #f8f9fa; border-radius: 25px; padding: 20px;
+            background: #f8f9fa; border-radius: 25px; padding: 25px 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         .quick-link-container {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px;
         }
         .q-group-title {
             grid-column: 1 / -1; font-size: 1.2rem; font-weight: bold; color: var(--primary-red);
             margin: 20px 0 10px 0; border-left: 5px solid var(--gold-main); padding-left: 15px;
+            display: flex; align-items: center; gap: 8px;
         }
+        .q-group-title:first-child { margin-top: 0; }
+        
         .q-link {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            padding: 20px 10px; background: white; border-radius: 18px;
-            text-decoration: none; color: #444; font-weight: 700; transition: 0.3s;
+            padding: 18px 10px; background: white; border-radius: 18px;
+            text-decoration: none; color: #444; font-weight: 700; transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; font-size: 0.95rem;
+            min-height: 120px; box-sizing: border-box;
         }
-        .q-link:hover { transform: translateY(-5px); color: var(--primary-red); box-shadow: 0 8px 15px rgba(0,0,0,0.1); }
-        .q-link i { font-size: 2.5rem; margin-bottom: 10px; color: var(--primary-red); }
+        .q-link span { display: block; margin-top: 4px; }
+        .q-link small { display: block; margin-top: 2px; font-size: 0.8rem; font-weight: 400; color: #666; }
+        .q-link:hover { transform: translateY(-5px); color: var(--primary-red); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+        .q-link i { font-size: 2.3rem; margin-bottom: 8px; color: var(--primary-red); transition: transform 0.3s ease; }
+        .q-link:hover i { transform: scale(1.1); }
 
         /* --- Content & Gallery --- */
         .container-content { width: 100%; max-width: 600px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; }
@@ -126,7 +133,7 @@
             display: block; width: 100%; padding: 15px; border-radius: 12px;
             background: linear-gradient(to bottom, #ff4d4d, #b30000); color: white;
             text-decoration: none; font-weight: 700; font-size: 1.1rem; box-shadow: 0 5px 0 #800000;
-            transition: transform 0.2s;
+            transition: transform 0.2s; box-sizing: border-box;
         }
         .btn-main:active { transform: translateY(3px); box-shadow: 0 2px 0 #800000; }
 
@@ -149,7 +156,7 @@
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
         @media (max-width: 600px) {
-            .quick-link-container { grid-template-columns: repeat(2, 1fr); }
+            .quick-link-container { grid-template-columns: repeat(2, 1fr); gap: 10px; }
             .hero { height: 40vh; }
         }
     </style>
@@ -176,35 +183,58 @@
         <div class="ql-label"><i class="fas fa-star"></i> ลิงก์ด่วน / ระบบร้าน</div>
         <div class="ql-outer-box">
             <div class="quick-link-container">
-                <div class="q-group-title">🍱 สำหรับลูกค้า</div>
+                
+                <!-- กลุ่มที่ 1: สำหรับลูกค้า -->
+                <div class="q-group-title"><i class="fas fa-utensils"></i> สำหรับลูกค้า</div>
                 <a href="https://www.jookdee100y.x10.bz/made_to_order_food/status.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-desktop"></i> จอคิวลูกค้า
+                    <i class="fas fa-desktop"></i><span>จอคิวลูกค้า</span>
                 </a>
                 <a href="https://www.jookdee100y.x10.bz/radio/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-broadcast-tower"></i> วิทยุ
+                    <i class="fas fa-broadcast-tower"></i><span>วิทยุออนไลน์</span>
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/general/clock.php" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-clock"></i><span>นาฬิกา</span>
                 </a>
                 <a href="https://www.jookdee100y.x10.bz/game/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-gamepad"></i> เกมส์สนุกๆ
+                    <i class="fas fa-gamepad"></i><span>เกมส์สนุกๆ</span>
                 </a>
 
-                <div class="q-group-title">⚙️ ระบบงาน</div>
+                <!-- กลุ่มที่ 2: ระบบงานร้านจุกดี -->
+                <div class="q-group-title"><i class="fas fa-cogs"></i> ระบบงานร้านจุกดี</div>
                 <a href="https://www.jookdee100y.x10.bz/made_to_order_food/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-clipboard-list"></i> รับออเดอร์
+                    <i class="fas fa-clipboard-list"></i><span>รับออเดอร์</span>
+                </a>
+                <a href="http://www.jookdee100y.whf.bz/made_to_order_food/order.php" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-user-edit"></i><span>รับออเดอร์ (WHF)</span>
                 </a>
                 <a href="https://www.jookdee100y.x10.bz/made_to_order_food/kitchen.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-fire"></i> หน้าครัว
+                    <i class="fas fa-fire"></i><span>หน้าครัว (X10)</span>
+                </a>
+                <a href="http://www.jookdee100y.whf.bz/made_to_order_food/kitchen.php" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-store"></i><span>หน้าครัว (WHF)</span>
                 </a>
                 <a href="https://www.jookdee100y.x10.bz/note/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-sticky-note"></i> โน้ต/ระบบ
+                    <i class="fas fa-sticky-note"></i><span>สมุดโน้ต</span>
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/admin_ip.php" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-tools"></i><span>ระบบหลังบ้าน</span>
                 </a>
 
-                <div class="q-group-title">🚤 บริการอื่นๆ</div>
+                <!-- กลุ่มที่ 3: บริการอื่นๆ & ศักดิ์ชัยนำโชค -->
+                <div class="q-group-title"><i class="fas fa-ship"></i> บริการอื่นๆ & ศักดิ์ชัยนำโชค</div>
+                <a href="https://www.youtube.com/@sakchaibangpakong" target="_blank" rel="noopener" class="q-link">
+                    <i class="fab fa-youtube" style="color: #FF0000;"></i><span>YouTube<small>ศักดิ์ชัยนำโชค</small></span>
+                </a>
                 <a href="https://www.facebook.com/sakchaiccas/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fab fa-facebook"></i> ศักดิ์ชัย FB
+                    <i class="fab fa-facebook" style="color: #1877F2;"></i><span>Facebook<small>เรือสปีดโบ๊ท</small></span>
+                </a>
+                <a href="https://sakchaiboat.42web.io/" target="_blank" rel="noopener" class="q-link">
+                    <i class="fas fa-ship" style="color: #28a745;"></i><span>เว็บเรือสปีดโบ๊ท</span>
                 </a>
                 <a href="https://www.jookdee100y.x10.bz/lottery/index.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-ticket-alt"></i> ตรวจหวย
+                    <i class="fas fa-ticket-alt"></i><span>ตรวจหวย</span>
                 </a>
+
             </div>
         </div>
     </section>
@@ -238,7 +268,7 @@
             <div style="color: var(--gold-main); font-size: 0.9rem;">
                 <i class="fas fa-eye"></i> ผู้เข้าชมสะสม: 15,400 ครั้ง
             </div>
-            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">© 2025 Jookdee Boat Noodle</p>
+            <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 10px;">© 2026 Jookdee Boat Noodle</p>
         </div>
     </footer>
 
@@ -251,27 +281,28 @@
         // 1. เริ่มต้น Animation
         AOS.init({ once: true, duration: 800 });
 
-        // 2. ฟังก์ชันนาฬิกาภาษาไทย (ทำงานแบบ Real-time)
+        // 2. ฟังก์ชันนาฬิกาภาษาไทย (แก้ไขการแสดงผลชื่อวันถูกต้อง 100%)
         function updateThaiTime() {
             const now = new Date();
+            
+            const thDays = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"];
             const thMonths = [
                 "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
                 "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
             ];
 
-            const day = now.getDate();
+            const dayName = thDays[now.getDay()];
+            const dayDate = now.getDate();
             const month = thMonths[now.getMonth()];
-            const year = now.getFullYear() + 543; // แปลง ค.ศ. เป็น พ.ศ.
+            const year = now.getFullYear() + 543;
             const hours = now.getHours().toString().padStart(2, '0');
             const minutes = now.getMinutes().toString().padStart(2, '0');
             const seconds = now.getSeconds().toString().padStart(2, '0');
 
-            // ส่งข้อความไปแสดงที่ <span id="thaiTime">
-            const timeString = `วัน${day} ${month} ${year} | เวลา ${hours}:${minutes}:${seconds} น.`;
+            const timeString = `วัน${dayName}ที่ ${dayDate} ${month} ${year} | เวลา ${hours}:${minutes}:${seconds} น.`;
             document.getElementById('thaiTime').innerText = timeString;
         }
 
-        // สั่งให้ทำงานทันที และอัพเดททุก 1 วินาที
         updateThaiTime();
         setInterval(updateThaiTime, 1000);
 

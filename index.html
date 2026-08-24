@@ -7,7 +7,7 @@
     <meta name="description" content="ก๋วยเตี๋ยวปากหม้อสูตรโบราณ ตลาดบ้านใหม่ 100 ปี ฉะเชิงเทรา">
     
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700;900&family=Prompt:wght@400;600&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -24,7 +24,7 @@
             background-color: #f4f4f4;
             background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
             background-size: 20px 20px;
-            font-family: 'Kanit', sans-serif;
+            font-family: 'Kanit', 'Sarabun', 'Prompt', sans-serif;
             color: var(--text-dark);
             margin: 0;
             overflow-x: hidden;
@@ -76,42 +76,110 @@
         
         @keyframes pulse-clock { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } 100% { opacity: 1; transform: scale(1); } }
 
-        /* --- Quick Links Section --- */
+        /* --- Quick Links Section (สไตล์ใหม่ประยุกต์เต็มรูปแบบ) --- */
         .quick-links-section {
-            width: 100%; max-width: 950px; margin: -40px auto 30px auto;
+            width: 100%; max-width: 1000px; margin: -40px auto 30px auto;
             position: relative; z-index: 10; padding: 0 15px; box-sizing: border-box;
         }
-        .ql-label {
-            background: var(--primary-red); color: white; padding: 6px 20px;
-            border-radius: 50px; font-weight: bold; display: inline-block;
-            margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-        .ql-outer-box {
-            background: #f8f9fa; border-radius: 25px; padding: 25px 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .quick-link-container {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px;
-        }
-        .q-group-title {
-            grid-column: 1 / -1; font-size: 1.2rem; font-weight: bold; color: var(--primary-red);
-            margin: 20px 0 10px 0; border-left: 5px solid var(--gold-main); padding-left: 15px;
-            display: flex; align-items: center; gap: 8px;
-        }
-        .q-group-title:first-child { margin-top: 0; }
         
-        .q-link {
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            padding: 18px 10px; background: white; border-radius: 18px;
-            text-decoration: none; color: #444; font-weight: 700; transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; font-size: 0.95rem;
-            min-height: 120px; box-sizing: border-box;
+        .ql-outer-box {
+            width: 100%;
+            padding: 35px;
+            background: linear-gradient(145deg, #ffffff, #f0f2f5);
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-sizing: border-box;
         }
+
+        .quick-link-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 24px;
+            justify-content: center;
+        }
+
+        .q-group-title {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 25px 0 10px 0;
+            padding: 12px 18px;
+            border-left: 6px solid #D4AF37;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.12), transparent);
+            border-radius: 0 12px 12px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .q-group-title:first-child { margin-top: 0; }
+        .q-group-title i { margin-right: 12px; color: #B22222; }
+
+        .q-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 28px 20px;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.04);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #444444;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.5;
+            letter-spacing: 0.3px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+            position: relative;
+            text-align: center;
+            min-height: 140px;
+            box-sizing: border-box;
+        }
+
+        .q-link i {
+            font-size: 2.6rem;
+            margin-bottom: 16px;
+            background: linear-gradient(45deg, #B22222, #FF4500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.4s ease;
+            filter: drop-shadow(0 3px 6px rgba(178, 34, 34, 0.25));
+        }
+
         .q-link span { display: block; margin-top: 4px; }
-        .q-link small { display: block; margin-top: 2px; font-size: 0.8rem; font-weight: 400; color: #666; }
-        .q-link:hover { transform: translateY(-5px); color: var(--primary-red); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
-        .q-link i { font-size: 2.3rem; margin-bottom: 8px; color: var(--primary-red); transition: transform 0.3s ease; }
-        .q-link:hover i { transform: scale(1.1); }
+        .q-link small { display: block; margin-top: 6px; font-size: 0.85rem; font-weight: 400; opacity: 0.85; }
+
+        .q-link:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+            border-color: rgba(0,0,0,0);
+        }
+
+        .q-link:hover i { transform: scale(1.15) rotate(-4deg); }
+
+        .q-link.yt-style:hover { border-bottom: 4px solid #FF0000; }
+        .q-link.yt-style i { 
+            background: linear-gradient(45deg, #FF0000, #cc0000); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            filter: drop-shadow(0 3px 6px rgba(255, 0, 0, 0.3));
+        }
+
+        .q-link.fb-style:hover { border-bottom: 4px solid #1877F2; }
+        .q-link.fb-style i { 
+            background: linear-gradient(45deg, #1877F2, #0056b3); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            filter: drop-shadow(0 3px 6px rgba(24, 119, 242, 0.3));
+        }
+
+        .q-link.web-style:hover { border-bottom: 4px solid #28a745; }
+        .q-link.web-style i { 
+            background: linear-gradient(45deg, #28a745, #20c997); 
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            filter: drop-shadow(0 3px 6px rgba(40, 167, 69, 0.3));
+        }
 
         /* --- Content & Gallery --- */
         .container-content { width: 100%; max-width: 600px; margin: 0 auto; padding: 0 15px; box-sizing: border-box; }
@@ -155,8 +223,12 @@
 
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 
-        @media (max-width: 600px) {
-            .quick-link-container { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        @media (max-width: 768px) {
+            .ql-outer-box { padding: 20px 15px; margin: 15px auto; width: 100%; }
+            .quick-link-container { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .q-link { padding: 20px 10px; min-height: 120px; font-size: 0.95rem; }
+            .q-link i { font-size: 2.2rem; margin-bottom: 10px; }
+            .q-group-title { font-size: 1.15rem; padding: 10px 14px; margin: 15px 0 5px 0; }
             .hero { height: 40vh; }
         }
     </style>
@@ -179,62 +251,68 @@
         </div>
     </header>
 
-    <section class="quick-links-section">
-        <div class="ql-label"><i class="fas fa-star"></i> ลิงก์ด่วน / ระบบร้าน</div>
+    <section class="quick-links-section" data-aos="fade-up">
         <div class="ql-outer-box">
             <div class="quick-link-container">
                 
-                <!-- กลุ่มที่ 1: สำหรับลูกค้า -->
-                <div class="q-group-title"><i class="fas fa-utensils"></i> สำหรับลูกค้า</div>
-                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/status.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-desktop"></i><span>จอคิวลูกค้า</span>
+                <div class="q-group-title"><i class="fas fa-utensils"></i> สำหรับลูกค้าจุกดี</div>
+                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/status.php" target="_blank" class="q-link">
+                    <i class="fas fa-desktop"></i>
+                    <span>จอคิวลูกค้า</span>
                 </a>
-                <a href="https://www.jookdee100y.x10.bz/radio/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-broadcast-tower"></i><span>วิทยุออนไลน์</span>
+                <a href="https://www.jookdee100y.x10.bz/radio/" target="_blank" class="q-link">
+                    <i class="fas fa-broadcast-tower"></i>
+                    <span>วิทยุออนไลน์</span>
                 </a>
-                <a href="https://www.jookdee100y.x10.bz/general/clock.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-clock"></i><span>นาฬิกา</span>
+                <a href="https://www.jookdee100y.x10.bz/general/clock.php" target="_blank" class="q-link">
+                    <i class="fas fa-clock"></i>
+                    <span>นาฬิกา</span>
                 </a>
-                <a href="https://www.jookdee100y.x10.bz/game/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-gamepad"></i><span>เกมส์สนุกๆ</span>
-                </a>
-
-                <!-- กลุ่มที่ 2: ระบบงานร้านจุกดี -->
-                <div class="q-group-title"><i class="fas fa-cogs"></i> ระบบงานร้านจุกดี</div>
-                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-clipboard-list"></i><span>รับออเดอร์</span>
-                </a>
-                <a href="http://www.jookdee100y.whf.bz/made_to_order_food/order.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-user-edit"></i><span>รับออเดอร์ (WHF)</span>
-                </a>
-                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/kitchen.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-fire"></i><span>หน้าครัว (X10)</span>
-                </a>
-                <a href="http://www.jookdee100y.whf.bz/made_to_order_food/kitchen.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-store"></i><span>หน้าครัว (WHF)</span>
-                </a>
-                <a href="https://www.jookdee100y.x10.bz/note/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-sticky-note"></i><span>สมุดโน้ต</span>
-                </a>
-                <a href="https://www.jookdee100y.x10.bz/made_to_order_food/admin_ip.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-tools"></i><span>ระบบหลังบ้าน</span>
+                <a href="https://www.jookdee100y.x10.bz/game/" target="_blank" class="q-link">
+                    <i class="fas fa-gamepad"></i>
+                    <span>เกมส์สนุกๆ</span>
                 </a>
 
-                <!-- กลุ่มที่ 3: บริการอื่นๆ & ศักดิ์ชัยนำโชค -->
-                <div class="q-group-title"><i class="fas fa-ship"></i> บริการอื่นๆ & ศักดิ์ชัยนำโชค</div>
-                <a href="https://www.youtube.com/@sakchaibangpakong" target="_blank" rel="noopener" class="q-link">
-                    <i class="fab fa-youtube" style="color: #FF0000;"></i><span>YouTube<small>ศักดิ์ชัยนำโชค</small></span>
+                <div class="q-group-title"><i class="fas fa-cogs"></i> ระบบร้านจุกดี</div>
+                <a href="http://www.jookdee100y.whf.bz/made_to_order_food/order.php" target="_blank" class="q-link">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>รับออเดอร์พนักงาน</span>
                 </a>
-                <a href="https://www.facebook.com/sakchaiccas/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fab fa-facebook" style="color: #1877F2;"></i><span>Facebook<small>เรือสปีดโบ๊ท</small></span>
+                <a href="http://www.jookdee100y.whf.bz/made_to_order_food/kitchen.php" target="_blank" class="q-link">
+                    <i class="fas fa-fire"></i>
+                    <span>พนักงาน ร้านจุกดีก๋วยเตี๋ยวปากหม้อ</span>
+                </a>         
+                <a href="http://www.jookdee100y.whf.bz/made_to_order_food/logout.php" target="_blank" class="q-link">
+                    <i class="fas fa-server"></i>
+                    <span>ออกจากระบบ</span>
                 </a>
-                <a href="https://sakchaiboat.42web.io/" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-ship" style="color: #28a745;"></i><span>เว็บเรือสปีดโบ๊ท</span>
+                
+                <div class="q-group-title"><i class="fas fa-ship"></i> เรือสปีดโบ๊ท & แนะนำ</div>
+                <a href="https://www.youtube.com/@sakchaibangpakong" target="_blank" class="q-link yt-style">
+                    <i class="fab fa-youtube"></i>
+                    <span>Youtube<small>ศักดิ์ชัยนำโชค</small></span>
                 </a>
-                <a href="https://www.jookdee100y.x10.bz/lottery/index.php" target="_blank" rel="noopener" class="q-link">
-                    <i class="fas fa-ticket-alt"></i><span>ตรวจหวย</span>
+                <a href="https://www.facebook.com/sakchaiccas/" target="_blank" class="q-link fb-style">
+                    <i class="fab fa-facebook"></i>
+                    <span>Facebook<small>เรือสปีดโบ๊ท</small></span>
                 </a>
-
+                <a href="https://sakchaiboat.42web.io/" target="_blank" class="q-link web-style">
+                    <i class="fas fa-globe-asia"></i>
+                    <span>เว็บไซต์<small>เรือสปีดโบ๊ท</small></span>
+                </a>
+                <a href="https://jookdee100y.github.io/" target="_blank" class="q-link web-style">
+                    <i class="fas fa-store"></i>
+                    <span>ร้านจุกดี<small>ตลาดบ้านใหม่ (GitHub)</small></span>
+                </a>
+                <a href="https://jookdee100y.whf.bz/" target="_blank" class="q-link web-style">
+                    <i class="fas fa-store"></i>
+                    <span>ร้านจุกดี<small>ตลาดบ้านใหม่ (WHF)</small></span>
+                </a>
+                <a href="https://www.jookdee100y.x10.bz/" target="_blank" class="q-link web-style">
+                    <i class="fas fa-store"></i>
+                    <span>ร้านจุกดี<small>ตลาดบ้านใหม่ (X10)</small></span>
+                </a>
+                          
             </div>
         </div>
     </section>
@@ -278,13 +356,10 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // 1. เริ่มต้น Animation
         AOS.init({ once: true, duration: 800 });
 
-        // 2. ฟังก์ชันนาฬิกาภาษาไทย (แก้ไขการแสดงผลชื่อวันถูกต้อง 100%)
         function updateThaiTime() {
             const now = new Date();
-            
             const thDays = ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัสบดี", "ศุกร์", "เสาร์"];
             const thMonths = [
                 "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน",
@@ -306,7 +381,6 @@
         updateThaiTime();
         setInterval(updateThaiTime, 1000);
 
-        // 3. ฟังก์ชันเสียงพูดต้อนรับ
         let isSpeaking = false;
         function toggleSpeech() {
             const synth = window.speechSynthesis;
